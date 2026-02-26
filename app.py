@@ -1,21 +1,14 @@
-# from fastapi import FastAPI
-
-# app = FastAPI(title="Task Manager API")
-
-# @app.get("/")
-# def read_root():
-#     return "Task Manager API running"
-
-# @app.get("/health")
-# def health_check():
-#     return {"status": "ok"}
-
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 from database import get_db
 
 app = FastAPI()
+
+
+
+
+
 
 @app.get("/db-check")
 def check_db_connection(db: Session = Depends(get_db)):
@@ -26,4 +19,10 @@ def check_db_connection(db: Session = Depends(get_db)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Database connection failed: {str(e)}")
 
-# Your existing routes...
+@app.get("/")
+def read_root():
+    return "Task Manager API running"
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}

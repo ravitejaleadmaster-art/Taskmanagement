@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Ensure your credentials are correct here
-SQLALCHEMY_DATABASE_URL = "postgresql://user:Root@localhost/taskdb"
+SQLALCHEMY_DATABASE_URL = "postgresql://Root:Root@localhost/taskdb"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
