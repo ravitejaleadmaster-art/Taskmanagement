@@ -52,6 +52,7 @@
 ![Delete_method](/screenshots/Delete.png)
 ## Post method
 ![Post_method](/screenshots/post.png)
-
+## Put method
+![Put_method](/screenshots/put.png)
 
 
